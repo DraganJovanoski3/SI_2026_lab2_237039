@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="920" viewBox="0 0 720 920">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+  <style>
+    .node { fill: #e8f4fc; stroke: #2563eb; stroke-width: 2; }
+    .decision { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+    .text { font-family: Arial, sans-serif; font-size: 13px; fill: #111; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+    .edge { stroke: #333; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+  </style>
+  <text x="20" y="28" class="text" font-size="18" font-weight="bold">CFG: searchBookByTitle</text>
+  <ellipse cx="360" cy="60" rx="55" ry="24" class="node"/>
+  <text x="330" y="65" class="text">START</text>
+  <polygon points="360,110 430,150 360,190 290,150" class="decision"/>
+  <text x="300" y="148" class="text">title.isEmpty()?</text>
+  <rect x="500" y="125" width="170" height="50" rx="8" class="node"/>
+  <text x="515" y="155" class="text">throw IllegalArgumentException</text>
+  <rect x="255" y="220" width="210" height="40" rx="8" class="node"/>
+  <text x="270" y="245" class="text">results = new ArrayList()</text>
+  <polygon points="360,300 440,340 360,380 280,340" class="decision"/>
+  <text x="300" y="338" class="text">for (book : books)</text>
+  <polygon points="360,430 470,470 360,510 250,470" class="decision"/>
+  <text x="255" y="462" class="text">title match &amp;&amp; !borrowed?</text>
+  <rect x="500" y="445" width="120" height="40" rx="8" class="node"/>
+  <text x="515" y="470" class="text">results.add(book)</text>
+  <polygon points="360,560 450,600 360,640 270,600" class="decision"/>
+  <text x="305" y="605" class="text">results.isEmpty()?</text>
+  <rect x="500" y="580" width="90" height="40" rx="8" class="node"/>
+  <text x="520" y="605" class="text">return null</text>
+  <rect x="255" y="680" width="110" height="40" rx="8" class="node"/>
+  <text x="275" y="705" class="text">return results</text>
+  <ellipse cx="360" cy="780" rx="40" ry="22" class="node"/>
+  <text x="340" y="785" class="text">END</text>
+  <line x1="360" y1="84" x2="360" y2="110" class="edge"/>
+  <line x1="405" y1="150" x2="500" y2="150" class="edge"/>
+  <text x="420" y="140" class="label">T</text>
+  <line x1="315" y1="150" x2="360" y2="220" class="edge"/>
+  <text x="318" y="185" class="label">F</text>
+  <line x1="585" y1="175" x2="585" y2="860" class="edge"/>
+  <line x1="585" y1="860" x2="400" y2="860" class="edge"/>
+  <line x1="400" y1="860" x2="400" y2="780" class="edge"/>
+  <line x1="360" y1="260" x2="360" y2="300" class="edge"/>
+  <line x1="315" y1="340" x2="360" y2="680" class="edge"/>
+  <text x="300" y="520" class="label">F (no more books)</text>
+  <line x1="405" y1="340" x2="360" y2="430" class="edge"/>
+  <text x="410" y="385" class="label">T</text>
+  <line x1="455" y1="470" x2="500" y2="470" class="edge"/>
+  <text x="460" y="460" class="label">T</text>
+  <line x1="560" y1="485" x2="560" y2="340" class="edge"/>
+  <line x1="560" y1="340" x2="405" y2="340" class="edge"/>
+  <line x1="265" y1="470" x2="360" y2="560" class="edge"/>
+  <text x="230" y="520" class="label">F</text>
+  <line x1="360" y1="510" x2="360" y2="560" class="edge"/>
+  <line x1="405" y1="600" x2="500" y2="600" class="edge"/>
+  <text x="420" y="590" class="label">T</text>
+  <line x1="315" y1="600" x2="310" y2="680" class="edge"/>
+  <text x="318" y="645" class="label">F</text>
+  <line x1="500" y1="620" x2="400" y2="758" class="edge"/>
+  <line x1="310" y1="720" x2="360" y2="758" class="edge"/>
+  <line x1="360" y1="802" x2="360" y2="840" class="edge"/>
+</svg>
